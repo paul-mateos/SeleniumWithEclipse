@@ -6,7 +6,8 @@ import org.openqa.selenium.*;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import automationFramework.UICommon.*;
+import automationFramework.Common.*;
+import automationFramework.PageModels.HomePage;
 
 public class FirstTestCase {
 
@@ -17,7 +18,9 @@ public static void main(String[] args) {
 
 //Search Criteria
 By MyAccount = By.xpath(".//*[@id='account']/a"); 	
+By AccountLockout = By.xpath(".//*[@id='account_logout']/a");
 	
+
 //Create a new instance of the Firefox driver
 
 driver = new FirefoxDriver();
@@ -33,7 +36,9 @@ driver.get("http://www.store.demoqa.com");
         // Find the element that's ID attribute is 'account'(My Account) 
 
 //driver.findElement(By.xpath(".//*[@id='account']/a")).click();
-UICommon.GetElement(MyAccount, driver).click();
+//UICommon.GetElement(MyAccount, driver).click();
+HomePage homepage = new HomePage(driver);
+homepage.ClickMyAccountButton();
 
         // Find the element that's ID attribute is 'log' (Username)
 
@@ -57,7 +62,7 @@ driver.findElement(By.id("log")).sendKeys("testuser_1");
 
         // Find the element that's ID attribute is 'account_logout' (Log Out)
 
-        driver.findElement (By.xpath(".//*[@id='account_logout']/a")).click();
+        driver.findElement(AccountLockout).click();
 
         // Close the driver
 
