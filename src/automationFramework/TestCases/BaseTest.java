@@ -1,15 +1,16 @@
 package automationFramework.TestCases;
 
-import static org.junit.Assert.*;
 
-import java.util.Properties;
+
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Test;
+
 
 public class BaseTest {
 
@@ -40,7 +41,10 @@ public class BaseTest {
 				break;				
 		}
 		
-	}
+		//Launch the Online Store Website
+		driver.get("http://www.store.demoqa.com");
+
+		}
 
 	
 	@AfterClass

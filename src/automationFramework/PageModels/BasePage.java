@@ -1,15 +1,16 @@
 package automationFramework.PageModels;
 
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 
 public abstract class BasePage {
 
-	static protected WebDriver d;
+	protected WebDriver d;
 	public BasePage(WebDriver driver) 
 	{
-		d = driver;
+		this.d = driver;
 		d.switchTo().defaultContent();
-		d.manage().timeouts().setScriptTimeout(60, null);
+		d.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
 	}
 	
 }

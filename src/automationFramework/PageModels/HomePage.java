@@ -6,12 +6,13 @@ import org.openqa.selenium.WebDriver;
 import automationFramework.Common.UICommon;
 
 
-public class HomePage extends BasePage{
-
-	static WebDriver d;
+public class HomePage extends BasePage
+{
+	WebDriver d;
 	public HomePage(WebDriver driver)  {
 		
 		super(driver);
+		this.d = driver;
 		
 	}
 	
